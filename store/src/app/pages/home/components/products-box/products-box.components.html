@@ -1,0 +1,24 @@
+<mat-card [class.text-center]="!fullWidthMode">
+    <div [class.flex]="fullWidthMode">
+      <img
+        src="https://via.placeholder.com/150"
+        [class.h-200px]="!fullWidthMode"
+        [class.h-[360px]]="fullWidthMode"
+        alt=""
+        class="mb-1 mx-auto h-[200px]"
+      >
+      <div class="w-full">
+        <div [class.px-8]="true" [class.flex]="true" [class.flex-col]="true" [class.justify-between]="true">
+          <h5>Shoes</h5>
+          <p class="truncate hover:whitespace-normal">Sneakers</p>
+          <p *ngIf="fullWidthMode">Description</p>
+        </div>
+        <div class="flex justify-between" [class.px-8]="true">
+          <span class="text-red-400">{{ 150 | currency: 'USD':'symbol':'1.2-2' }}</span>
+          <button (click)="onAddToCart()">
+            <mat-icon class="text-gray-500">shopping_cart</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-card>

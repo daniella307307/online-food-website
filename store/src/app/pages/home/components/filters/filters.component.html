@@ -1,0 +1,13 @@
+<div *ngIf="categories">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="flex justify-between">CATEGORIES</mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-selection-list [multiple]="false">
+        <mat-list-option *ngFor="let categoryItem of categories" [value]="categoryItem">
+          <button (click)="onShowCategory(categoryItem)">{{ categoryItem }}</button>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-expansion-panel>
+  </div>
+  
